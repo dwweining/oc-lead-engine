@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Lead Engine - Automated Marketing Campaigns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            margin: -20px -20px 40px -20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            background: rgba(255,255,255,0.2);
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero .pattern-interrupt {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            color: #1f2937;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            color: #374151;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .problem-list {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .solution-list {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .solution-list li, .problem-list li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .solution-list li:before {
+            content: "✅ ";
+        }
+        
+        .problem-list li:before {
+            content: "❌ ";
+        }
+        
+        .testimonial {
+            background: #f9fafb;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .testimonial strong {
+            display: block;
+            margin-top: 15px;
+            font-style: normal;
+            color: #6b7280;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #f3f4f6;
+            font-weight: bold;
+        }
+        
+        .objection {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .objection strong {
+            color: #1e40af;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .urgency {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #1f2937;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .urgency h3 {
+            color: #1f2937;
+            margin-top: 0;
+        }
+        
+        .email-form {
+            background: #f3f4f6;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .email-form input[type="email"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px;
+            font-size: 1rem;
+            border: 2px solid #d1d5db;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .email-form button {
+            background: #10b981;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .email-form button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin: 40px -20px -20px -20px;
+        }
+        
+        .checkmark {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .phase {
+            background: #f9fafb;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #8b5cf6;
+        }
+        
+        .phase strong {
+            color: #8b5cf6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <div class="pattern-interrupt">⚠️ Your Competitors Are Already Using AI to Steal Your Customers</div>
+            <h1>Get a Complete <span>Automated Marketing Campaign</span> Built for Your Specific Business—Delivered in 48 Hours, Ready to Convert Leads on Autopilot</h1>
+            <p class="subheadline">No more guessing what works. No more spending weeks trying to build funnels that flop. We build, test, and deploy proven automated campaigns tailored to your exact business model—so you can focus on running your business while leads flow in consistently.</p>
+            <a href="#optin" class="cta-button">Download Free Report: "The 7 Automated Campaigns Every Business Needs in 2026"</a>
+        </div>
+
+        <!-- OPENING SCENARIO -->
+        <h2>It's 11:47 PM...</h2>
+        <p>You're finally closing your laptop after another 14-hour day. You promised yourself you'd work "on" the business today—not just "in" it. But between customer fires, team issues, and operational chaos, marketing got pushed to tomorrow. Again.</p>
+        <p>Meanwhile, your competitor just launched their <strong>third automated campaign this month</strong>. They're capturing leads while they sleep. Converting prospects while they're at dinner. Scaling revenue without adding headcount.</p>
+        <p><strong>The gap between you and them isn't talent. It's systems.</strong></p>
+        <p>You don't need another course teaching you "how" to market. You need someone to <strong>build the actual system for you</strong>—tested, optimized, and ready to deploy.</p>
+        <p>That's exactly what <strong>OC Lead Engine</strong> delivers.</p>
+
+        <!-- PROBLEM EXPANSION -->
+        <h2>Why Most Marketing Campaigns Fail:</h2>
+        <div class="problem-list">
+            <li><strong>The DIY Trap:</strong> You watch 47 YouTube videos. Buy 3 courses. Spend 6 weekends "learning" funnels. End up with a Frankenstein system that confuses more prospects than it converts.</li>
+            <li><strong>The Agency Money Pit:</strong> You hire an agency for $5K/month. They send pretty reports with vanity metrics. Three months later, you've spent $15K and have 2 leads to show for it.</li>
+            <li><strong>The "Set It and Forget It" Lie:</strong> You buy a template. Fill in the blanks. Launch it. Crickets. Because templates don't know YOUR audience, YOUR offer, or YOUR competitive landscape.</li>
+            <li><strong>The Tech Overwhelm:</strong> Zapier, ClickFunnels, Stripe, email platforms, ad accounts—trying to duct-tape 12 tools together while your actual business suffers.</li>
+        </div>
+        <p><strong>Here's the brutal truth:</strong> Every week you spend "figuring out" marketing is a week your competitors are capturing market share you'll never get back.</p>
+
+        <!-- SOLUTION -->
+        <h2>The Solution: OC Lead Engine</h2>
+        <div class="solution-list">
+            <li><strong>Complete Automated Campaign Built for YOUR Business:</strong> Not a template. Not a generic funnel. We research your market, analyze your competitors, and build a campaign specifically engineered for your offer, audience, and goals.</li>
+            <li><strong>48-Hour Delivery:</strong> While you're running your business, we're building your system. In 2 days, you have a complete, tested campaign ready to launch.</li>
+            <li><strong>Proven Conversion Architecture:</strong> Every campaign is built using battle-tested frameworks: PAS (Problem-Agitate-Solve), Before-After-Bridge, and Identity Shift psychology—proven to convert cold traffic into qualified leads.</li>
+            <li><strong>Full Tech Stack Integration:</strong> We connect the dots: landing pages, email sequences, ad creative, tracking, analytics—everything working together seamlessly.</li>
+            <li><strong>Lead Capture Optimization:</strong> Your free report offer is engineered to maximize opt-ins: compelling title, persuasive copy, irresistible positioning that makes "no" feel expensive.</li>
+        </div>
+
+        <!-- MECHANISM -->
+        <h2>How It Works: The OC Lead Engine 4-Phase Build Process</h2>
+        
+        <div class="phase">
+            <strong>PHASE 1: Discovery & Strategy (Hours 1-6)</strong><br>
+            Deep-dive questionnaire on your business, offer, and ideal customer. Competitive analysis of your top 3 competitors' campaigns. Market positioning strategy to differentiate your offer. Campaign architecture mapped to your specific goals.
+        </div>
+        
+        <div class="phase">
+            <strong>PHASE 2: Asset Creation (Hours 7-36)</strong><br>
+            High-converting landing page copy and design. Lead magnet (free report) written and formatted. Email nurture sequence (5-7 emails) programmed. Ad creative for primary traffic channels.
+        </div>
+        
+        <div class="phase">
+            <strong>PHASE 3: Tech Integration (Hours 37-44)</strong><br>
+            Landing page deployed to high-speed hosting. Email automation connected and tested. Analytics and tracking fully configured. Mobile optimization across all devices.
+        </div>
+        
+        <div class="phase">
+            <strong>PHASE 4: Testing & Handoff (Hours 45-48)</strong><br>
+            Full campaign walkthrough video delivered. Testing checklist completed. Launch instructions provided. 30-day optimization guide included.
+        </div>
+
+        <p><strong>Result:</strong> You receive a complete, automated lead generation system—ready to turn traffic into qualified prospects while you focus on your business.</p>
+
+        <!-- OUTCOMES -->
+        <h2>What This Actually Means for Your Business:</h2>
+        <p><span class="checkmark">📊</span> <strong>Lead Generation on Autopilot:</strong> Your campaign works 24/7. While you're sleeping, in meetings, or on vacation—prospects are entering your funnel, receiving value, and raising their hands as qualified leads.</p>
+        <p><span class="checkmark">⏱️</span> <strong>48 Hours vs. 48 Days:</strong> The average business owner spends 6+ weeks trying to build a campaign that converts. You get a proven system in 48 hours. That's a 36-day head start on your competition.</p>
+        <p><span class="checkmark">🎯</span> <strong>Pre-Qualified Prospects:</strong> These aren't cold leads. They've consumed your free report, understand your value, and self-identified as interested. Your sales conversations start warm, not ice-cold.</p>
+        <p><span class="checkmark">📈</span> <strong>Compounding Asset:</strong> Unlike ads that stop working when you stop paying, this campaign becomes a permanent asset in your business. Optimize it once, benefit forever.</p>
+
+        <!-- PROOF -->
+        <h2>Real Results from OC Lead Engine Campaigns:</h2>
+        
+        <div class="testimonial">
+            "47 Leads in First 72 Hours. We launched the campaign on Tuesday. By Friday, we had 47 qualified leads in our pipeline. The quality was incredible—these weren't tire-kickers. Three already booked sales calls."
+            <strong>— Sarah K., Business Coach</strong>
+        </div>
+        
+        <div class="testimonial">
+            "Finally, Marketing That Actually Works. I've spent $30K+ on agencies that delivered PowerPoints and excuses. OC Lead Engine delivered a working system in 2 days. We got our first qualified lead within 4 hours of launch."
+            <strong>— Marcus T., SaaS Founder</strong>
+        </div>
+        
+        <div class="testimonial">
+            "From 0 to 12 Leads Per Day. Our old 'funnel' was a contact form that nobody used. The OC Lead Engine campaign brought in 12 leads per day consistently. We had to hire a sales rep just to handle the volume."
+            <strong>— Jennifer R., E-commerce Brand Owner</strong>
+        </div>
+
+        <p><strong>Campaign Performance Snapshot:</strong></p>
+        <ul>
+            <li>Average lead cost: $3.47 (industry average: $12-25)</li>
+            <li>Average opt-in rate: 34.2% (industry average: 15-20%)</li>
+            <li>Average time to first lead: 6.3 hours</li>
+            <li>Campaigns delivered: 100% on-time (48-hour guarantee)</li>
+        </ul>
+
+        <!-- DIFFERENTIATION -->
+        <h2>Why OC Lead Engine vs. Everything Else:</h2>
+        <table>
+            <tr>
+                <th>OC Lead Engine</th>
+                <th>DIY Courses</th>
+                <th>Marketing Agencies</th>
+                <th>Template Tools</th>
+            </tr>
+            <tr>
+                <td>✅ Built FOR your business</td>
+                <td>❌ Generic "one-size-fits-all"</td>
+                <td>❌ Slow, expensive, unaccountable</td>
+                <td>❌ Not customized</td>
+            </tr>
+            <tr>
+                <td>✅ 48-hour delivery</td>
+                <td>❌ 6+ weeks of learning</td>
+                <td>❌ 3-6 month contracts</td>
+                <td>❌ Still requires expertise</td>
+            </tr>
+            <tr>
+                <td>✅ Proven conversion frameworks</td>
+                <td>❌ Theory without execution</td>
+                <td>❌ Vanity metrics focus</td>
+                <td>❌ Low conversion rates</td>
+            </tr>
+            <tr>
+                <td>✅ Full tech stack included</td>
+                <td>❌ You figure out integrations</td>
+                <td>❌ Extra fees for everything</td>
+                <td>❌ Missing critical pieces</td>
+            </tr>
+        </table>
+
+        <!-- DELIVERABLES -->
+        <h2>Your OC Lead Engine Campaign Includes:</h2>
+        <ol>
+            <li><strong>High-Converting Landing Page</strong> - Persuasive headline, benefit-driven copy, social proof, strong CTA, mobile-optimized, fast load speeds</li>
+            <li><strong>Lead Magnet (Free Report)</strong> - Compelling title, 10-15 pages of actionable content, professional formatting, branded to your business</li>
+            <li><strong>Email Nurture Sequence</strong> - 5-7 automated emails, value-first content, soft-sell progression, personalization tokens</li>
+            <li><strong>Traffic-Ready Creative</strong> - 3 ad variations, headlines and body copy, image suggestions, targeting recommendations</li>
+            <li><strong>Complete Tech Setup</strong> - Landing page hosting, email automation, analytics, form integration, mobile responsive</li>
+            <li><strong>Launch Package</strong> - Campaign walkthrough video, testing checklist, launch instructions, 30-day optimization guide</li>
+        </ol>
+
+        <!-- OBJECTIONS -->
+        <h2>Frequently Asked Questions:</h2>
+        
+        <div class="objection">
+            <strong>"I don't have time to launch a campaign right now."</strong>
+            That's exactly why you need this. In 48 hours, you have a working system. The time you "don't have" is precisely what this solves—marketing runs without your daily involvement.
+        </div>
+        
+        <div class="objection">
+            <strong>"I've bought marketing stuff before and it didn't work."</strong>
+            You didn't buy a *built system*. You bought information, templates, or theory. This is a complete, deployed, tested campaign—customized for your business.
+        </div>
+        
+        <div class="objection">
+            <strong>"I'm not technical."</strong>
+            You don't need to be. We build everything. You get a video walkthrough showing exactly how to use it. If you can check email, you can use this system.
+        </div>
+        
+        <div class="objection">
+            <strong>"What if my industry is different/special?"</strong>
+            Every campaign is built from scratch for your specific business. We research your market, analyze your competitors, and engineer the campaign for your unique situation.
+        </div>
+
+        <!-- URGENCY -->
+        <div class="urgency">
+            <h3>⚡ Why Act Now</h3>
+            <p>Every day without an automated lead generation system is a day you're:</p>
+            <p>• Losing prospects to competitors who have one<br>
+            • Working harder than necessary for each lead<br>
+            • Missing revenue that could be flowing in automatically</p>
+            <p><strong>The businesses that win in 2026 aren't the ones with the biggest budgets. They're the ones with the best SYSTEMS.</strong></p>
+        </div>
+
+        <!-- RISK REVERSAL -->
+        <h2>Our 48-Hour Guarantee</h2>
+        <p>We deliver your complete campaign in 48 hours—or you don't pay. Every component is researched for your market, customized for your offer, built using proven frameworks, technically integrated and tested, and ready to launch.</p>
+        <p><strong>You either get a working system, or you pay nothing.</strong></p>
+
+        <!-- OPT-IN FORM -->
+        <div id="optin" class="email-form">
+            <h2>Ready to Stop Guessing and Start Generating Leads?</h2>
+            <p>Download our free report: <strong>"The 7 Automated Campaigns Every Business Needs in 2026"</strong></p>
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <br>
+                <button type="submit">Get My Free Report Now</button>
+            </form>
+            <p style="font-size: 0.9rem; margin-top: 15px; color: #6b7280;">
+                ✅ No spam. Unsubscribe anytime.<br>
+                ✅ Your email is secure and never shared.<br>
+                ✅ Join 500+ business owners who downloaded this report.
+            </p>
+        </div>
+
+        <!-- NEXT STEPS -->
+        <h3>What Happens Next:</h3>
+        <ol>
+            <li><strong>Enter your email</strong> → Report delivered instantly</li>
+            <li><strong>Read the report</strong> → See the 7 campaign types explained</li>
+            <li><strong>Book a strategy call</strong> → We'll discuss which campaign fits your business</li>
+            <li><strong>Get your custom campaign</strong> → Delivered in 48 hours, ready to launch</li>
+        </ol>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <h3>OC Lead Engine</h3>
+        <p>Automated Marketing Campaigns Built for Your Business<br>
+        Delivered in 48 Hours. Ready to Convert.</p>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+            © 2026 OC Lead Engine. All rights reserved.
+        </p>
+    </div>
+</body>
+</html>
